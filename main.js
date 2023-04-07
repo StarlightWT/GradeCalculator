@@ -6,11 +6,11 @@ function addGrade() {
   const output = document.getElementById("output_grades");
   let gradeElement = document.createElement("li");
   let weight = document.getElementById("weight").value;
-  gradeElement.innerHTML = `${grade} (${weight})`;
-  if (!(grade != null && weight > 0 && weight <= 100)) return;
+  gradeElement.innerHTML = `${selectedGrade} (${weight})`;
+  if (!(selectedGrade != null && weight > 0 && weight <= 100)) return;
   output.append(gradeElement);
   //translate grade to an actual number for calculations
-  switch (grade) {
+  switch (selectedGrade) {
     case "1-":
       grade = 1.33;
       break;
@@ -43,7 +43,7 @@ function addGrade() {
 }
 
 function selectGrade(element) {
-  grade = element.innerHTML;
+  selectedGrade = element.innerHTML;
   if (lastElement) lastElement.style.backgroundColor = "#202020";
   element.style.backgroundColor = "green";
   lastElement = element;
