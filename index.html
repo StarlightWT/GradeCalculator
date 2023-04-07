@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Grade Calcualtor</h1>
+      <div class="input">
+        <div class="grades">
+          <!-- this is used purely for spacing, do not remove! -->
+          <div></div>
+          <!-- this is used purely for spacing, do not remove! -->
+          <div class="grade">
+            <button onclick="selectGrade(this)">1</button>
+            <button onclick="selectGrade(this)">1-</button>
+          </div>
+          <div class="grade">
+            <button onclick="selectGrade(this)">2+</button>
+            <button onclick="selectGrade(this)">2</button>
+            <button onclick="selectGrade(this)">2-</button>
+          </div>
+          <div class="grade">
+            <button onclick="selectGrade(this)">3+</button>
+            <button onclick="selectGrade(this)">3</button>
+            <button onclick="selectGrade(this)">3-</button>
+          </div>
+          <div class="grade">
+            <button onclick="selectGrade(this)">4+</button>
+            <button onclick="selectGrade(this)">4</button>
+            <button onclick="selectGrade(this)">4-</button>
+          </div>
+          <div class="grade">
+            <button onclick="selectGrade(this)">5+</button>
+            <button onclick="selectGrade(this)">5</button>
+          </div>
+        </div>
+        <div class="weight">
+          <label for="weight">Grade's weight:</label><br />
+          <input
+            class="grade_weight_input"
+            name="weight"
+            type="number"
+            id="weight"
+            onchange="handleChange(this)" />
+          <button class="add_grade_btn" onclick="addGrade()">Add grade</button>
+        </div>
+      </div>
+      <div class="output">
+        <ul id="output_grades"></ul>
+        <h2 id="avg_output">Average: 0</h2>
+      </div>
+      <h3>Made by Eve</h3>
+    </div>
+  </body>
+  <script>
+    function handleChange(input) {
+      if (input.value < 0) {
+        input.value = 0;
+        input.setAttribute("class", "invalid");
+        setTimeout(() => {
+          input.setAttribute("class", "grade_weight_input");
+        }, 750);
+      }
+      if (input.value > 100) {
+        input.value = 100;
+      }
+    }
+  </script>
+</html>
