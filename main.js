@@ -1,6 +1,7 @@
 var grade = null;
 var grades = [];
 var weights = [];
+var lastElement;
 function addGrade() {
   const output = document.getElementById("output_grades");
   let gradeElement = document.createElement("li");
@@ -43,6 +44,9 @@ function addGrade() {
 
 function selectGrade(element) {
   grade = element.innerHTML;
+  if (lastElement) lastElement.style.backgroundColor = "#202020";
+  element.style.backgroundColor = "green";
+  lastElement = element;
 }
 
 function calculateAverage() {

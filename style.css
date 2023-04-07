@@ -49,6 +49,9 @@ button:hover {
 .grade button {
   width: 3rem;
   height: 2rem;
+  background-color: #202020;
+  color: white;
+  font-weight: bold;
 }
 
 .weight {
