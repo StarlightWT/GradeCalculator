@@ -11,11 +11,17 @@ function addGrade() {
   output.append(gradeElement);
   //translate grade to an actual number for calculations
   switch (selectedGrade) {
+    case "1":
+      grade = 1;
+      break;
     case "1-":
       grade = 1.33;
       break;
     case "2+":
       grade = 1.66;
+      break;
+    case "2":
+      grade = 2;
       break;
     case "2-":
       grade = 2.33;
@@ -23,14 +29,23 @@ function addGrade() {
     case "3+":
       grade = 2.66;
       break;
+    case "3":
+      grade = 3;
+      break;
     case "3-":
       grade = 3.33;
       break;
     case "4+":
       grade = 3.66;
       break;
+    case "4":
+      grade = 4;
+      break;
     case "4-":
       grade = 4.33;
+      break;
+    case "5":
+      grade = 5;
       break;
   }
   grades.push(grade);
