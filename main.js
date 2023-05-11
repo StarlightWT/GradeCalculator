@@ -6,7 +6,7 @@ function addGrade() {
   const output = document.getElementById("output_grades");
   let gradeElement = document.createElement("li");
   let weight = document.getElementById("weight").value;
-  if (weight > 0 && weight < 0.9) weight *= 100;
+  if (weight > 0 && weight < 1) weight *= 100;
   gradeElement.innerHTML = `${selectedGrade} (${weight}%)`;
   if (!(selectedGrade != null && weight > 0 && weight <= 100)) return;
   output.append(gradeElement);
