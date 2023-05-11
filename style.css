@@ -83,6 +83,10 @@ button:hover {
   font-size: 20px;
 }
 
+.add_grade_btn.clear {
+  border-color: red;
+}
+
 .output {
   text-align: center;
 }

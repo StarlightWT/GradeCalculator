@@ -11,6 +11,7 @@ function addGrade() {
   if (!(selectedGrade != null && weight > 0 && weight <= 100)) return;
   output.append(gradeElement);
   //translate grade to an actual number for calculations
+  console.log(selectedGrade);
   switch (selectedGrade) {
     case "1":
       grade = 1;
@@ -49,6 +50,7 @@ function addGrade() {
       grade = 5;
       break;
   }
+  console.log(grade);
   grades.push(grade);
   weights.push(weight);
   let avgOutput = document.getElementById("avg_output");
@@ -76,4 +78,10 @@ function calculateAverage() {
     `Total weight: ${totalWeight} \n Total grades: ${totalGrades} \n Weights: ${weights} \n Grades: ${grades}`
   );
   return totalGrades / totalWeight;
+}
+
+function refresh() {
+  setTimeout(function () {
+    location.reload();
+  }, 100);
 }
